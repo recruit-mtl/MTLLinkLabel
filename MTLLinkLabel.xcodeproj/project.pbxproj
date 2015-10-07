@@ -10,6 +10,7 @@
 		E91BB42C1BC50C050080C300 /* MTLLinkLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = E91BB42B1BC50C050080C300 /* MTLLinkLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E91BB4331BC50C060080C300 /* MTLLinkLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91BB4291BC50C050080C300 /* MTLLinkLabel.framework */; settings = {ASSET_TAGS = (); }; };
 		E91BB4381BC50C060080C300 /* MTLLinkLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91BB4371BC50C060080C300 /* MTLLinkLabelTests.swift */; };
+		E929F0571BC531CC00BFAD6B /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB74C91BC3626C00E34805 /* LinkLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E929F0571BC531CC00BFAD6B /* LinkLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +373,7 @@
 				E91BB43C1BC50C060080C300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E91BB43D1BC50C060080C300 /* Build configuration list for PBXNativeTarget "MTLLinkLabelTests" */ = {
 			isa = XCConfigurationList;
@@ -379,6 +382,7 @@
 				E91BB43F1BC50C060080C300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9BB74931BC3621000E34805 /* Build configuration list for PBXProject "MTLLinkLabel" */ = {
 			isa = XCConfigurationList;

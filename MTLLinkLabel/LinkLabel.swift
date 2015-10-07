@@ -8,9 +8,9 @@
 
 import UIKit
 
-typealias LinkSelection = (NSURL) -> Void
+public typealias LinkSelection = (NSURL) -> Void
 
-protocol LinkLabelDelegate: NSObjectProtocol {
+public protocol LinkLabelDelegate: NSObjectProtocol {
     
     func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject]
     
@@ -19,7 +19,7 @@ protocol LinkLabelDelegate: NSObjectProtocol {
     func linkLabelCheckingLinkType() -> NSTextCheckingTypes
 }
 
-extension LinkLabelDelegate {
+public extension LinkLabelDelegate {
     
     func linkLabelExecuteLink(linkLabel: LinkLabel, var text: String, result: NSTextCheckingResult) -> Void {
         
@@ -57,11 +57,11 @@ extension LinkLabelDelegate {
     }
 }
 
-class LinkLabel: UILabel {
+public class LinkLabel: UILabel {
     
-    weak var delegate: LinkLabelDelegate? = DelegateObject()
+    public weak var delegate: LinkLabelDelegate? = DelegateObject()
     
-    override var text: String? {
+    override public var text: String? {
         didSet {
             guard let str = text else {
                 super.attributedText = nil
@@ -83,7 +83,7 @@ class LinkLabel: UILabel {
         }
     }
     
-    override var attributedText: NSAttributedString? {
+    override public var attributedText: NSAttributedString? {
         didSet {
             self.reloadAttributedString()
         }
@@ -91,13 +91,13 @@ class LinkLabel: UILabel {
     
     // MARK: - Add custome link
     
-    func addLink(url: NSURL, range: NSRange, linkColor: UIColor? = nil, selection: LinkSelection?) -> LinkLabel {
+    public func addLink(url: NSURL, range: NSRange, linkColor: UIColor? = nil, selection: LinkSelection?) -> LinkLabel {
         self.customLinks.append(CustomLink(url: url, range: range, linkColor: linkColor ?? self.tintColor ?? UIColor.blackColor(), selection: selection))
         self.reloadAttributedString()
         return self
     }
     
-    func removeLink(url: NSURL, range: NSRange) -> LinkLabel {
+    public func removeLink(url: NSURL, range: NSRange) -> LinkLabel {
         self.customLinks = self.customLinks.filter{!($0.url.path == url.path && $0.range.location == range.location && $0.range.length == range.length)}
         self.reloadAttributedString()
         return self
@@ -105,7 +105,7 @@ class LinkLabel: UILabel {
     
     // MARK: - touch
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let location = touches.first?.locationInView(self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
         let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
@@ -132,7 +132,7 @@ class LinkLabel: UILabel {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let location = touches.first?.locationInView(self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
         let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
@@ -166,7 +166,7 @@ class LinkLabel: UILabel {
         }
     }
     
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         
         if let count = self.attributedText?.string.characters.count {
             if count > 0 {

@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E929F01E1BC5303400BFAD6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F01D1BC5303400BFAD6B /* AppDelegate.swift */; };
+		E929F0201BC5303400BFAD6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F01F1BC5303400BFAD6B /* ViewController.swift */; };
+		E929F0231BC5303400BFAD6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E929F0211BC5303400BFAD6B /* Main.storyboard */; };
+		E929F0251BC5303400BFAD6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E929F0241BC5303400BFAD6B /* Assets.xcassets */; };
+		E929F0281BC5303400BFAD6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E929F0261BC5303400BFAD6B /* LaunchScreen.storyboard */; };
+		E929F0331BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F0321BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift */; };
+		E929F03E1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F03D1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift */; };
+		E929F0551BC530EF00BFAD6B /* MTLLinkLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E929F0521BC5306C00BFAD6B /* MTLLinkLabel.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E929F02F1BC5303400BFAD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E929F0121BC5303400BFAD6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E929F0191BC5303400BFAD6B;
+			remoteInfo = MTLLinkLabelExample;
+		};
+		E929F03A1BC5303400BFAD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E929F0121BC5303400BFAD6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E929F0191BC5303400BFAD6B;
+			remoteInfo = MTLLinkLabelExample;
+		};
+		E929F0511BC5306C00BFAD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E929F04C1BC5306C00BFAD6B /* MTLLinkLabel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E91BB4291BC50C050080C300;
+			remoteInfo = MTLLinkLabel;
+		};
+		E929F0531BC5306C00BFAD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E929F04C1BC5306C00BFAD6B /* MTLLinkLabel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E91BB4321BC50C060080C300;
+			remoteInfo = MTLLinkLabelTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E929F01A1BC5303400BFAD6B /* MTLLinkLabelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTLLinkLabelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E929F01D1BC5303400BFAD6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E929F01F1BC5303400BFAD6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E929F0221BC5303400BFAD6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E929F0241BC5303400BFAD6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E929F0271BC5303400BFAD6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E929F0291BC5303400BFAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E929F02E1BC5303400BFAD6B /* MTLLinkLabelExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTLLinkLabelExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E929F0321BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLLinkLabelExampleTests.swift; sourceTree = "<group>"; };
+		E929F0341BC5303400BFAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E929F0391BC5303400BFAD6B /* MTLLinkLabelExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTLLinkLabelExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E929F03D1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLLinkLabelExampleUITests.swift; sourceTree = "<group>"; };
+		E929F03F1BC5303400BFAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E929F04C1BC5306C00BFAD6B /* MTLLinkLabel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MTLLinkLabel.xcodeproj; path = ../MTLLinkLabel.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E929F0171BC5303400BFAD6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E929F0551BC530EF00BFAD6B /* MTLLinkLabel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F02B1BC5303400BFAD6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F0361BC5303400BFAD6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E929F0111BC5303400BFAD6B = {
+			isa = PBXGroup;
+			children = (
+				E929F04C1BC5306C00BFAD6B /* MTLLinkLabel.xcodeproj */,
+				E929F01C1BC5303400BFAD6B /* MTLLinkLabelExample */,
+				E929F0311BC5303400BFAD6B /* MTLLinkLabelExampleTests */,
+				E929F03C1BC5303400BFAD6B /* MTLLinkLabelExampleUITests */,
+				E929F01B1BC5303400BFAD6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E929F01B1BC5303400BFAD6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E929F01A1BC5303400BFAD6B /* MTLLinkLabelExample.app */,
+				E929F02E1BC5303400BFAD6B /* MTLLinkLabelExampleTests.xctest */,
+				E929F0391BC5303400BFAD6B /* MTLLinkLabelExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E929F01C1BC5303400BFAD6B /* MTLLinkLabelExample */ = {
+			isa = PBXGroup;
+			children = (
+				E929F01D1BC5303400BFAD6B /* AppDelegate.swift */,
+				E929F01F1BC5303400BFAD6B /* ViewController.swift */,
+				E929F0211BC5303400BFAD6B /* Main.storyboard */,
+				E929F0241BC5303400BFAD6B /* Assets.xcassets */,
+				E929F0261BC5303400BFAD6B /* LaunchScreen.storyboard */,
+				E929F0291BC5303400BFAD6B /* Info.plist */,
+			);
+			path = MTLLinkLabelExample;
+			sourceTree = "<group>";
+		};
+		E929F0311BC5303400BFAD6B /* MTLLinkLabelExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E929F0321BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift */,
+				E929F0341BC5303400BFAD6B /* Info.plist */,
+			);
+			path = MTLLinkLabelExampleTests;
+			sourceTree = "<group>";
+		};
+		E929F03C1BC5303400BFAD6B /* MTLLinkLabelExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E929F03D1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift */,
+				E929F03F1BC5303400BFAD6B /* Info.plist */,
+			);
+			path = MTLLinkLabelExampleUITests;
+			sourceTree = "<group>";
+		};
+		E929F04D1BC5306C00BFAD6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E929F0521BC5306C00BFAD6B /* MTLLinkLabel.framework */,
+				E929F0541BC5306C00BFAD6B /* MTLLinkLabelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E929F0191BC5303400BFAD6B /* MTLLinkLabelExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E929F0421BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExample" */;
+			buildPhases = (
+				E929F0161BC5303400BFAD6B /* Sources */,
+				E929F0171BC5303400BFAD6B /* Frameworks */,
+				E929F0181BC5303400BFAD6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MTLLinkLabelExample;
+			productName = MTLLinkLabelExample;
+			productReference = E929F01A1BC5303400BFAD6B /* MTLLinkLabelExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E929F02D1BC5303400BFAD6B /* MTLLinkLabelExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E929F0451BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleTests" */;
+			buildPhases = (
+				E929F02A1BC5303400BFAD6B /* Sources */,
+				E929F02B1BC5303400BFAD6B /* Frameworks */,
+				E929F02C1BC5303400BFAD6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E929F0301BC5303400BFAD6B /* PBXTargetDependency */,
+			);
+			name = MTLLinkLabelExampleTests;
+			productName = MTLLinkLabelExampleTests;
+			productReference = E929F02E1BC5303400BFAD6B /* MTLLinkLabelExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E929F0381BC5303400BFAD6B /* MTLLinkLabelExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E929F0481BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleUITests" */;
+			buildPhases = (
+				E929F0351BC5303400BFAD6B /* Sources */,
+				E929F0361BC5303400BFAD6B /* Frameworks */,
+				E929F0371BC5303400BFAD6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E929F03B1BC5303400BFAD6B /* PBXTargetDependency */,
+			);
+			name = MTLLinkLabelExampleUITests;
+			productName = MTLLinkLabelExampleUITests;
+			productReference = E929F0391BC5303400BFAD6B /* MTLLinkLabelExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E929F0121BC5303400BFAD6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = MTL;
+				TargetAttributes = {
+					E929F0191BC5303400BFAD6B = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					E929F02D1BC5303400BFAD6B = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = E929F0191BC5303400BFAD6B;
+					};
+					E929F0381BC5303400BFAD6B = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = E929F0191BC5303400BFAD6B;
+					};
+				};
+			};
+			buildConfigurationList = E929F0151BC5303400BFAD6B /* Build configuration list for PBXProject "MTLLinkLabelExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E929F0111BC5303400BFAD6B;
+			productRefGroup = E929F01B1BC5303400BFAD6B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E929F04D1BC5306C00BFAD6B /* Products */;
+					ProjectRef = E929F04C1BC5306C00BFAD6B /* MTLLinkLabel.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E929F0191BC5303400BFAD6B /* MTLLinkLabelExample */,
+				E929F02D1BC5303400BFAD6B /* MTLLinkLabelExampleTests */,
+				E929F0381BC5303400BFAD6B /* MTLLinkLabelExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E929F0521BC5306C00BFAD6B /* MTLLinkLabel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MTLLinkLabel.framework;
+			remoteRef = E929F0511BC5306C00BFAD6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E929F0541BC5306C00BFAD6B /* MTLLinkLabelTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MTLLinkLabelTests.xctest;
+			remoteRef = E929F0531BC5306C00BFAD6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E929F0181BC5303400BFAD6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E929F0281BC5303400BFAD6B /* LaunchScreen.storyboard in Resources */,
+				E929F0251BC5303400BFAD6B /* Assets.xcassets in Resources */,
+				E929F0231BC5303400BFAD6B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F02C1BC5303400BFAD6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F0371BC5303400BFAD6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E929F0161BC5303400BFAD6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E929F0201BC5303400BFAD6B /* ViewController.swift in Sources */,
+				E929F01E1BC5303400BFAD6B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F02A1BC5303400BFAD6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E929F0331BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E929F0351BC5303400BFAD6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E929F03E1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E929F0301BC5303400BFAD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E929F0191BC5303400BFAD6B /* MTLLinkLabelExample */;
+			targetProxy = E929F02F1BC5303400BFAD6B /* PBXContainerItemProxy */;
+		};
+		E929F03B1BC5303400BFAD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E929F0191BC5303400BFAD6B /* MTLLinkLabelExample */;
+			targetProxy = E929F03A1BC5303400BFAD6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E929F0211BC5303400BFAD6B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E929F0221BC5303400BFAD6B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E929F0261BC5303400BFAD6B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E929F0271BC5303400BFAD6B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E929F0401BC5303400BFAD6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E929F0411BC5303400BFAD6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E929F0431BC5303400BFAD6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTLLinkLabelExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E929F0441BC5303400BFAD6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MTLLinkLabelExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E929F0461BC5303400BFAD6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MTLLinkLabelExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTLLinkLabelExample.app/MTLLinkLabelExample";
+			};
+			name = Debug;
+		};
+		E929F0471BC5303400BFAD6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MTLLinkLabelExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTLLinkLabelExample.app/MTLLinkLabelExample";
+			};
+			name = Release;
+		};
+		E929F0491BC5303400BFAD6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MTLLinkLabelExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MTLLinkLabelExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E929F04A1BC5303400BFAD6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MTLLinkLabelExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabelExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MTLLinkLabelExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E929F0151BC5303400BFAD6B /* Build configuration list for PBXProject "MTLLinkLabelExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E929F0401BC5303400BFAD6B /* Debug */,
+				E929F0411BC5303400BFAD6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E929F0421BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E929F0431BC5303400BFAD6B /* Debug */,
+				E929F0441BC5303400BFAD6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E929F0451BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E929F0461BC5303400BFAD6B /* Debug */,
+				E929F0471BC5303400BFAD6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E929F0481BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E929F0491BC5303400BFAD6B /* Debug */,
+				E929F04A1BC5303400BFAD6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E929F0121BC5303400BFAD6B /* Project object */;
+}
