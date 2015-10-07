@@ -59,7 +59,7 @@ public extension LinkLabelDelegate {
 
 public class LinkLabel: UILabel {
     
-    public weak var delegate: LinkLabelDelegate? = DelegateObject()
+    public weak var delegate: LinkLabelDelegate?
     
     override public var text: String? {
         didSet {
@@ -87,6 +87,16 @@ public class LinkLabel: UILabel {
         didSet {
             self.reloadAttributedString()
         }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.delegate = self.dummyDelegate
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.delegate = self.dummyDelegate
     }
     
     // MARK: - Add custome link
@@ -193,6 +203,7 @@ public class LinkLabel: UILabel {
     private var textView: UITextView?
     private var lastCheckingResults = [NSTextCheckingResult]()
     private var customLinks = [CustomLink]()
+    private let dummyDelegate = DelegateObject()
     
     private func reloadAttributedString() {
         self.lastCheckingResults = self.searchLink(attributedText?.string ?? "")
@@ -250,10 +261,7 @@ public class LinkLabel: UILabel {
         
         return self.mekeAttributeStringA(attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([String: AnyObject], NSRange) in
             return (
-                self.delegate?.linkAttributeForLinkLabel(
-                    self,
-                    checkingType: .Link
-                ) ?? [String: AnyObject](),
+                [NSForegroundColorAttributeName: customLink.linkColor],
                 customLink.range
             )
         })

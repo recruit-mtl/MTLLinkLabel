@@ -16,9 +16,17 @@ class ViewController: UIViewController, LinkLabelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.linkLabel.delegate = self
-        self.linkLabel.text = "Hello, world! http://google.com こんにちは！ \n😀 09097043483 kokoro@enw.jp"
+        self.linkLabel.text = "Hello, world! http://google.com こんにちは！ \nLink for Apple😀"
         
+        self.linkLabel.addLink(NSURL(string: "http://apple.com")!, range: (self.linkLabel.text! as NSString).rangeOfString("Link for Apple"), linkColor: UIColor.redColor()) { (url) -> Void in
+            
+            let alert = UIAlertController(title: nil, message: url.path, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            alert.addAction(UIAlertAction(title: "Go", style: .Default, handler: { (action) -> Void in
+                UIApplication.sharedApplication().openURL(url)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
