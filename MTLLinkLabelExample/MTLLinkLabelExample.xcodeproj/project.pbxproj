@@ -535,6 +535,7 @@
 				E929F0441BC5303400BFAD6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E929F0451BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +544,7 @@
 				E929F0471BC5303400BFAD6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E929F0481BC5303400BFAD6B /* Build configuration list for PBXNativeTarget "MTLLinkLabelExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +553,7 @@
 				E929F04A1BC5303400BFAD6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,9 +14,12 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
     
     func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject]
     
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject]
+    
     func linkLabelExecuteLink(linkLabel: LinkLabel, text: String, result: NSTextCheckingResult) -> Void
     
     func linkLabelCheckingLinkType() -> NSTextCheckingTypes
+    
 }
 
 public extension LinkLabelDelegate {
@@ -45,6 +48,13 @@ public extension LinkLabelDelegate {
     }
     
     func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject] {
+        return [
+            NSForegroundColorAttributeName: linkLabel.tintColor,
+            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+        ]
+    }
+    
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject] {
         return [
             NSForegroundColorAttributeName: linkLabel.tintColor,
             NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
@@ -101,8 +111,15 @@ public class LinkLabel: UILabel {
     
     // MARK: - Add custome link
     
-    public func addLink(url: NSURL, range: NSRange, linkColor: UIColor? = nil, selection: LinkSelection?) -> LinkLabel {
-        self.customLinks.append(CustomLink(url: url, range: range, linkColor: linkColor ?? self.tintColor ?? UIColor.blackColor(), selection: selection))
+    public func addLink(url: NSURL, range: NSRange, linkAttribute: [String: AnyObject]? = nil, selection: LinkSelection?) -> LinkLabel {
+        self.customLinks.append(
+            CustomLink(
+                url: url,
+                range: range,
+                linkAttribute: linkAttribute ?? self.delegate?.linkDefaultAttributeForCustomeLink(self) ?? [String: AnyObject](),
+                selection: selection
+            )
+        )
         self.reloadAttributedString()
         return self
     }
@@ -131,9 +148,7 @@ public class LinkLabel: UILabel {
             
             self.searchResult(index, inResults: self.lastCheckingResults) { (resultOrNil) -> Void in
                 
-                guard let result = resultOrNil else {
-                    return
-                }
+                guard let result = resultOrNil else { return }
                 
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
                 mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
@@ -167,12 +182,13 @@ public class LinkLabel: UILabel {
             }
         }
         
-        if let count = self.attributedText?.string.characters.count {
-            if count > 0 {
-                let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
-                self.attributedText = mAttributedString
-            }
+        // NSAttributedStrings range length is NSStrings lenhgth. I can't use "Swift.String.charactors.count".
+        let count = ((self.attributedText?.string ?? "") as NSString).length
+
+        if count > 0 {
+            let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
+            mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
+            self.attributedText = mAttributedString
         }
     }
     
@@ -194,7 +210,7 @@ public class LinkLabel: UILabel {
     private struct CustomLink {
         let url: NSURL
         let range: NSRange
-        let linkColor: UIColor
+        let linkAttribute: [String: AnyObject]
         let selection: LinkSelection?
     }
     
@@ -234,7 +250,7 @@ public class LinkLabel: UILabel {
         guard let linkType = self.delegate?.linkLabelCheckingLinkType() else { return [] }
         guard let dataDetector = try? NSDataDetector(types: linkType) else { return [] }
         
-        return dataDetector.matchesInString(string, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, string.characters.count))
+        return dataDetector.matchesInString(string, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, (string as NSString).length))
     }
     
     private func searchResult(index: Int, inResults: [NSTextCheckingResult], completion: (NSTextCheckingResult?) -> Void) {
@@ -261,7 +277,7 @@ public class LinkLabel: UILabel {
         
         return self.mekeAttributeStringA(attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([String: AnyObject], NSRange) in
             return (
-                [NSForegroundColorAttributeName: customLink.linkColor],
+                customLink.linkAttribute,
                 customLink.range
             )
         })
