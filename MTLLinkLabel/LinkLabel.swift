@@ -321,6 +321,7 @@ public class LinkLabel: UILabel {
         textView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         textView.userInteractionEnabled = false
         textView.font = self.font
+        textView.textContainer.lineBreakMode = self.lineBreakMode
         textView.textContainer.lineFragmentPadding = 0.0
         textView.textContainerInset = UIEdgeInsetsZero
         textView.hidden = true
