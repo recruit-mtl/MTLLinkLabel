@@ -73,6 +73,7 @@ public class LinkLabel: UILabel {
     
     override public var text: String? {
         didSet {
+            self.customLinks.removeAll()
             guard let str = text else {
                 super.attributedText = nil
                 return
@@ -95,6 +96,7 @@ public class LinkLabel: UILabel {
     
     override public var attributedText: NSAttributedString? {
         didSet {
+            self.customLinks.removeAll()
             self.reloadAttributedString()
         }
     }
@@ -161,7 +163,7 @@ public class LinkLabel: UILabel {
         guard let location = touches.first?.locationInView(self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
         let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
-        
+
         self.searchCustomeLink(index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
             if let link = linkOrNil {
                 link.selection?(link.url)
