@@ -73,9 +73,10 @@ public class LinkLabel: UILabel {
     
     override public var text: String? {
         didSet {
-            self.customLinks.removeAll()
+            
             guard let str = text else {
                 super.attributedText = nil
+                self.customLinks.removeAll()
                 return
             }
             let mAttributedString = NSMutableAttributedString(string: str)
@@ -97,6 +98,7 @@ public class LinkLabel: UILabel {
     override public var attributedText: NSAttributedString? {
         didSet {
             self.customLinks.removeAll()
+            print("removeAll")
             self.reloadAttributedString()
         }
     }
@@ -122,6 +124,7 @@ public class LinkLabel: UILabel {
                 selection: selection
             )
         )
+        print("customLinks")
         self.reloadAttributedString()
         return self
     }
@@ -144,7 +147,7 @@ public class LinkLabel: UILabel {
             if let link = linkOrNil {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
                 mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: link.range)
-                self.attributedText = mAttributedString
+                super.attributedText = mAttributedString
                 return
             }
             
@@ -154,7 +157,7 @@ public class LinkLabel: UILabel {
                 
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
                 mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
-                self.attributedText = mAttributedString
+                super.attributedText = mAttributedString
             }
         }
     }
@@ -190,7 +193,7 @@ public class LinkLabel: UILabel {
         if count > 0 {
             let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
             mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
-            self.attributedText = mAttributedString
+            super.attributedText = mAttributedString
         }
     }
     
@@ -200,7 +203,7 @@ public class LinkLabel: UILabel {
             if count > 0 {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
                 mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
-                self.attributedText = mAttributedString
+                super.attributedText = mAttributedString
             }
         }
     }
@@ -226,7 +229,7 @@ public class LinkLabel: UILabel {
     private func reloadAttributedString() {
         self.lastCheckingResults = self.searchLink(attributedText?.string ?? "")
         
-        super.attributedText = self.makeAttrbutedStringForCheckingResults(
+        let a = self.makeAttrbutedStringForCheckingResults(
             self.lastCheckingResults,
             attributedStringOrNil: self.mekeAttributeStringForCustomLink(
                 self.customLinks,
@@ -234,9 +237,14 @@ public class LinkLabel: UILabel {
             )
         )
         
+        super.attributedText = a
+        
         self.textStorage?.removeLayoutManager(self.layoutManager)
         if let attributedString = self.attributedText {
-            self.textStorage = NSTextStorage(attributedString: attributedString)
+            let ma = NSMutableAttributedString(attributedString: attributedString)
+            
+            ma.addAttribute(NSFontAttributeName, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
+            self.textStorage = NSTextStorage(attributedString: ma)
         }
         else {
             self.textStorage = nil
@@ -320,12 +328,15 @@ public class LinkLabel: UILabel {
     
     private func makeTextView() -> UITextView {
         let textView = self.textView ?? UITextView(frame: self.bounds, textContainer: NSTextContainer(size: self.frame.size))
+        textView.editable = true
+        textView.selectable = true
         textView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        textView.userInteractionEnabled = false
+        
         textView.font = self.font
         textView.textContainer.lineBreakMode = self.lineBreakMode
         textView.textContainer.lineFragmentPadding = 0.0
         textView.textContainerInset = UIEdgeInsetsZero
+        textView.userInteractionEnabled = false
         textView.hidden = true
         self.addSubview(textView)
         return textView
