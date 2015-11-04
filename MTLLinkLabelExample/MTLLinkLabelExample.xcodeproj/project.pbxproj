@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E929F01E1BC5303400BFAD6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F01D1BC5303400BFAD6B /* AppDelegate.swift */; };
-		E929F0201BC5303400BFAD6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F01F1BC5303400BFAD6B /* ViewController.swift */; };
 		E929F0231BC5303400BFAD6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E929F0211BC5303400BFAD6B /* Main.storyboard */; };
 		E929F0251BC5303400BFAD6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E929F0241BC5303400BFAD6B /* Assets.xcassets */; };
 		E929F0281BC5303400BFAD6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E929F0261BC5303400BFAD6B /* LaunchScreen.storyboard */; };
 		E929F0331BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F0321BC5303400BFAD6B /* MTLLinkLabelExampleTests.swift */; };
 		E929F03E1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929F03D1BC5303400BFAD6B /* MTLLinkLabelExampleUITests.swift */; };
 		E929F0551BC530EF00BFAD6B /* MTLLinkLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E929F0521BC5306C00BFAD6B /* MTLLinkLabel.framework */; };
-		E9762F5A1BC8F98E00A88D6A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762F591BC8F98E00A88D6A /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		E9762F5E1BC8FA8800A88D6A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762F5D1BC8FA8800A88D6A /* TableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		E9762F5A1BC8F98E00A88D6A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762F591BC8F98E00A88D6A /* TableViewController.swift */; };
+		E9762F5E1BC8FA8800A88D6A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762F5D1BC8FA8800A88D6A /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		E929F01A1BC5303400BFAD6B /* MTLLinkLabelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTLLinkLabelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E929F01D1BC5303400BFAD6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E929F01F1BC5303400BFAD6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E929F0221BC5303400BFAD6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E929F0241BC5303400BFAD6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E929F0271BC5303400BFAD6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				E929F01D1BC5303400BFAD6B /* AppDelegate.swift */,
-				E929F01F1BC5303400BFAD6B /* ViewController.swift */,
 				E9762F591BC8F98E00A88D6A /* TableViewController.swift */,
 				E9762F5D1BC8FA8800A88D6A /* TableViewCell.swift */,
 				E929F0211BC5303400BFAD6B /* Main.storyboard */,
@@ -311,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E929F0201BC5303400BFAD6B /* ViewController.swift in Sources */,
 				E9762F5E1BC8FA8800A88D6A /* TableViewCell.swift in Sources */,
 				E9762F5A1BC8F98E00A88D6A /* TableViewController.swift in Sources */,
 				E929F01E1BC5303400BFAD6B /* AppDelegate.swift in Sources */,

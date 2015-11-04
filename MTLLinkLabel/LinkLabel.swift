@@ -98,7 +98,6 @@ public class LinkLabel: UILabel {
     override public var attributedText: NSAttributedString? {
         didSet {
             self.customLinks.removeAll()
-            print("removeAll")
             self.reloadAttributedString()
         }
     }
@@ -124,7 +123,6 @@ public class LinkLabel: UILabel {
                 selection: selection
             )
         )
-        print("customLinks")
         self.reloadAttributedString()
         return self
     }
