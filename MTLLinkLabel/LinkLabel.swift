@@ -24,7 +24,7 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
 
 public extension LinkLabelDelegate {
     
-    func linkLabelExecuteLink(linkLabel: LinkLabel, var text: String, result: NSTextCheckingResult) -> Void {
+    func linkLabelExecuteLink(linkLabel: LinkLabel, text: String, result: NSTextCheckingResult) -> Void {
         
         if result.resultType.contains(.Link) {
             
@@ -34,10 +34,9 @@ public extension LinkLabelDelegate {
                 return
             }
             
-            if !text.hasPrefix("http://") && !text.hasPrefix("https://") {
-                text = "http://" + text
-            }
-            guard let url = NSURL(string: text) else { return }
+            let httpText = !text.hasPrefix("http://") && !text.hasPrefix("https://") ? "http://" + text : text
+            
+            guard let url = NSURL(string: httpText) else { return }
             UIApplication.sharedApplication().openURL(url)
             
         }
@@ -138,6 +137,9 @@ public class LinkLabel: UILabel {
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let location = touches.first?.locationInView(self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
+        
+        self.textView?.textContainer.size = self.textView!.frame.size
+        
         let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
         
         self.searchCustomeLink(index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
@@ -163,6 +165,9 @@ public class LinkLabel: UILabel {
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let location = touches.first?.locationInView(self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
+        
+        self.textView?.textContainer.size = self.textView!.frame.size
+        
         let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
 
         self.searchCustomeLink(index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
