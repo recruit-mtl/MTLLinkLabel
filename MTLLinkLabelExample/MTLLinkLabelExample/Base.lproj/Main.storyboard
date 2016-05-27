@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jwn-Md-nRK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jwn-Md-nRK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +13,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e35-IQ-gbV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="XfX-jb-29a" customClass="TableViewCell" customModule="MTLLinkLabelExample" customModuleProvider="target">
@@ -25,13 +24,11 @@
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPP-Y6-B1z" customClass="LinkLabel" customModule="MTLLinkLabel">
                                             <rect key="frame" x="8" y="8" width="584" height="27.5"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="nPP-Y6-B1z" firstAttribute="top" secondItem="jde-87-x6D" secondAttribute="topMargin" id="7gZ-1I-UDY"/>
                                         <constraint firstItem="nPP-Y6-B1z" firstAttribute="trailing" secondItem="jde-87-x6D" secondAttribute="trailingMargin" id="YeI-AU-99x"/>
@@ -39,7 +36,6 @@
                                         <constraint firstItem="nPP-Y6-B1z" firstAttribute="bottom" secondItem="jde-87-x6D" secondAttribute="bottomMargin" id="z37-gd-Zyu"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="label" destination="nPP-Y6-B1z" id="TWu-be-HyN"/>
                                 </connections>
@@ -63,7 +59,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="x0H-m6-BCb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="f5z-Y8-rac" kind="relationship" relationship="rootViewController" id="HfG-ch-a55"/>

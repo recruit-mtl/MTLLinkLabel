@@ -1,0 +1,14 @@
+PODS:
+  - MTLLinkLabel (0.1.3)
+
+DEPENDENCIES:
+  - MTLLinkLabel (from `..`)
+
+EXTERNAL SOURCES:
+  MTLLinkLabel:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  MTLLinkLabel: 454d47d6b3f4896e81624d14136f1f9b545b9089
+
+COCOAPODS: 0.39.0
