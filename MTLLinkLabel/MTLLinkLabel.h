@@ -3,7 +3,7 @@
 //  MTLLinkLabel
 //
 //  Created by HiraiKokoro on 2015/10/07.
-//  Copyright © 2015年 HiraiKokoro. All rights reserved.
+//  Copyright (c) 2016, Recruit Holdings Co., Ltd.
 //
 
 #import <UIKit/UIKit.h>
