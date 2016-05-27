@@ -10,19 +10,6 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>01B77CE01B1502CF092C542AC1E46214</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MTLLinkLabel-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>02AEF9A5EF496DEDEFCFECED8798B322</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -36,32 +23,132 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1949731633EC92D71065307B353E4798</key>
-		<dict>
-			<key>fileRef</key>
-			<string>30511A8A1E0263999DA40FC33B028EDB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>1DF845122346639A4B10296C6162CC6F</key>
+		<key>1E93B5ADE21BBDDDF2A0C9950F3DD1F1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>text.plist.xml</string>
 			<key>path</key>
-			<string>LinkLabel.swift</string>
+			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>22521921E7D18C4C519C761F01EC7D21</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A8895EB6CB1DBD25624EA8547A66F579</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/MTLLinkLabel/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>MTLLinkLabel</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>23A554952AC99B88B28C3FD4C0EA1D47</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A8895EB6CB1DBD25624EA8547A66F579</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/MTLLinkLabel/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>MTLLinkLabel</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
 		</dict>
 		<key>2D4E6C10933237791DF62330E269943B</key>
 		<dict>
@@ -141,19 +228,6 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>30511A8A1E0263999DA40FC33B028EDB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MTLLinkLabel-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>358060B8301D3B0EEA6B26F4A6C093EC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -167,19 +241,30 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3BAC8577746BD316B8F240EAAA57F7CE</key>
+		<key>3987CE67F6CEE0D8D95AC433E183FF2C</key>
 		<dict>
-			<key>fileRef</key>
-			<string>69DF8A9855E4BAB9E1239611DA6057E5</string>
+			<key>buildConfigurationList</key>
+			<string>470EAA1AD4EA3531A02532666AB718E3</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8B2B079AE0D74B3020BF971DA54C5DFE</string>
+				<string>CA18AAE7D44DAC3CDB9D97C0D69139AE</string>
+				<string>CA9C387F586D2A28BBFD59282E2919E5</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MTLLinkLabel</string>
+			<key>productName</key>
+			<string>MTLLinkLabel</string>
+			<key>productReference</key>
+			<string>CB4D980BD373A6F66DC7CB91BAE5B5CD</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
 		</dict>
 		<key>3CB5F700BEA66777B80DAA67E8FE650F</key>
 		<dict>
@@ -190,7 +275,7 @@
 			<key>proxyType</key>
 			<string>1</string>
 			<key>remoteGlobalIDString</key>
-			<string>EA63D6469CCE4F9630E31B8F166647A0</string>
+			<string>3987CE67F6CEE0D8D95AC433E183FF2C</string>
 			<key>remoteInfo</key>
 			<string>MTLLinkLabel</string>
 		</dict>
@@ -207,6 +292,21 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
+		<key>3ED5B4FAF731CA1A33387C59C1935E3A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5C5087B783DA09170F36BE2D883FB156</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MTLLinkLabel</string>
+			<key>path</key>
+			<string>MTLLinkLabel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>3F7BE08548E4C2F7AAA1C65DB616279A</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -220,74 +320,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3F8094073B5EFB76DEBD75B726C01ACF</key>
+		<key>470EAA1AD4EA3531A02532666AB718E3</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MTLLinkLabel-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4683B7FBB52E56ABEABFC812963FF666</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>CA36D7425282A12EA55F7654CF328B79</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/MTLLinkLabel/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>MTLLinkLabel</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
+			<key>buildConfigurations</key>
+			<array>
+				<string>22521921E7D18C4C519C761F01EC7D21</string>
+				<string>23A554952AC99B88B28C3FD4C0EA1D47</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
 			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>488855CBC204DE83AD66D9FC619E0C5B</key>
 		<dict>
@@ -302,6 +347,26 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>4A3246C712ABC7B033BA2AADD2372935</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MTLLinkLabel-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>51969BB4F6130A8E2908947C0BF54146</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9972B94C5741121511F885858D58BC97</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5292445A66AB96492CA6C855431A062A</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -315,50 +380,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>57370D21C2CA1B210F4D71FDE5531983</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FAFE2FF6696C78D7D4CA4D3355146D66</string>
-				<string>949058F7F973AEA57A454E0D56C05AC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>MTLLinkLabel</string>
-			<key>path</key>
-			<string>../..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>612A082D4158EC0A37CF16FD3B051A9B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MTLLinkLabel.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>682D92493957EF3A8F76E4F7B69D6E49</key>
-		<dict>
-			<key>fileRef</key>
-			<string>01B77CE01B1502CF092C542AC1E46214</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>69DF8A9855E4BAB9E1239611DA6057E5</key>
+		<key>5C5087B783DA09170F36BE2D883FB156</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>MTLLinkLabel.h</string>
+			<string>LinkLabel.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -402,77 +433,6 @@
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>706D123B6C25B6A338E1DA7CA21F5CE8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7270FD87802D26DF467F25287850DD01</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>CA36D7425282A12EA55F7654CF328B79</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/MTLLinkLabel/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/MTLLinkLabel/MTLLinkLabel.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>MTLLinkLabel</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
 		</dict>
 		<key>7419ECA56EC431CFEA6494DB26A3B350</key>
 		<dict>
@@ -553,6 +513,31 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>81EE2641726943BE696445A3CBD6E19D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>MTLLinkLabel.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B2B079AE0D74B3020BF971DA54C5DFE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B09B1107CBC8D4CB2C58699272F5F18D</string>
+				<string>51969BB4F6130A8E2908947C0BF54146</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>8BE3D8921C48693AC5E2A479FD6D0187</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -566,6 +551,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>8D9EF71A2702CF5EDB80F57525EDF2F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4A3246C712ABC7B033BA2AADD2372935</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>90015968B9BBB3D700CAD3B4F131F0E6</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -577,39 +576,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>949058F7F973AEA57A454E0D56C05AC6</key>
+		<key>9114B52224F869DCE6F77AADF74ACCD3</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>706D123B6C25B6A338E1DA7CA21F5CE8</string>
-				<string>612A082D4158EC0A37CF16FD3B051A9B</string>
-				<string>CA36D7425282A12EA55F7654CF328B79</string>
-				<string>01B77CE01B1502CF092C542AC1E46214</string>
-				<string>3F8094073B5EFB76DEBD75B726C01ACF</string>
-				<string>30511A8A1E0263999DA40FC33B028EDB</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>MTLLinkLabelExample/Pods/Target Support Files/MTLLinkLabel</string>
+			<string>MTLLinkLabel-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94ECF8C20C4AE159BF4A8642C20A045E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>1949731633EC92D71065307B353E4798</string>
-				<string>3BAC8577746BD316B8F240EAAA57F7CE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>974778A5EADAF984D729ABEEBDE0D9CB</key>
 		<dict>
@@ -623,6 +601,19 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>9972B94C5741121511F885858D58BC97</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MTLLinkLabel-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
 		<dict>
@@ -697,6 +688,39 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>A8895EB6CB1DBD25624EA8547A66F579</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MTLLinkLabel.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9868C69B87863B1767A30A0CA9EEEC1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1E93B5ADE21BBDDDF2A0C9950F3DD1F1</string>
+				<string>81EE2641726943BE696445A3CBD6E19D</string>
+				<string>A8895EB6CB1DBD25624EA8547A66F579</string>
+				<string>9972B94C5741121511F885858D58BC97</string>
+				<string>9114B52224F869DCE6F77AADF74ACCD3</string>
+				<string>4A3246C712ABC7B033BA2AADD2372935</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>MTLLinkLabelExample/Pods/Target Support Files/MTLLinkLabel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>AC2763905BAE1181F51F4C7FE02C3273</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -724,26 +748,12 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B4B138FFE9C8004FFF4D884C262C188B</key>
+		<key>B09B1107CBC8D4CB2C58699272F5F18D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<string>5C5087B783DA09170F36BE2D883FB156</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>B5BB0528FE33A01E3E0BF39EEC387CA2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>7270FD87802D26DF467F25287850DD01</string>
-				<string>4683B7FBB52E56ABEABFC812963FF666</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
 		</dict>
 		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
 		<dict>
@@ -816,22 +826,51 @@
 			<key>name</key>
 			<string>MTLLinkLabel</string>
 			<key>target</key>
-			<string>EA63D6469CCE4F9630E31B8F166647A0</string>
+			<string>3987CE67F6CEE0D8D95AC433E183FF2C</string>
 			<key>targetProxy</key>
 			<string>3CB5F700BEA66777B80DAA67E8FE650F</string>
 		</dict>
-		<key>CA36D7425282A12EA55F7654CF328B79</key>
+		<key>C62D14DDF64977E57F512AB34B8C01F2</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>3ED5B4FAF731CA1A33387C59C1935E3A</string>
+				<string>A9868C69B87863B1767A30A0CA9EEEC1</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MTLLinkLabel</string>
 			<key>path</key>
-			<string>MTLLinkLabel.xcconfig</string>
+			<string>../..</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA18AAE7D44DAC3CDB9D97C0D69139AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CB884BE47C456EEF7A612FE0A8F863C3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CA9C387F586D2A28BBFD59282E2919E5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8D9EF71A2702CF5EDB80F57525EDF2F3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>CB4D980BD373A6F66DC7CB91BAE5B5CD</key>
 		<dict>
@@ -847,6 +886,13 @@
 			<string>MTLLinkLabel.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>CB884BE47C456EEF7A612FE0A8F863C3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -883,7 +929,7 @@
 			<string></string>
 			<key>targets</key>
 			<array>
-				<string>EA63D6469CCE4F9630E31B8F166647A0</string>
+				<string>3987CE67F6CEE0D8D95AC433E183FF2C</string>
 				<string>E7E690DE4E585ACB0884BFC4F70F73AD</string>
 			</array>
 		</dict>
@@ -956,13 +1002,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>E5F09FEE1139B78AC8A62CC6A65D5AB3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1DF845122346639A4B10296C6162CC6F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>E7E690DE4E585ACB0884BFC4F70F73AD</key>
 		<dict>
 			<key>buildConfigurationList</key>
@@ -990,36 +1029,11 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>EA63D6469CCE4F9630E31B8F166647A0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B5BB0528FE33A01E3E0BF39EEC387CA2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F89EBD6EDD2459092AE1E15FC5504008</string>
-				<string>F6CF695DFEFB311B9000005138EE0CA9</string>
-				<string>94ECF8C20C4AE159BF4A8642C20A045E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MTLLinkLabel</string>
-			<key>productName</key>
-			<string>MTLLinkLabel</string>
-			<key>productReference</key>
-			<string>CB4D980BD373A6F66DC7CB91BAE5B5CD</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
 		<key>F0CA1BAFD93D0CBC68449A962E5E30D2</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>57370D21C2CA1B210F4D71FDE5531983</string>
+				<string>C62D14DDF64977E57F512AB34B8C01F2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1027,19 +1041,6 @@
 			<string>Development Pods</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F6CF695DFEFB311B9000005138EE0CA9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B4B138FFE9C8004FFF4D884C262C188B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>F769FE3B2257A75819C00AFAAE8D1768</key>
 		<dict>
@@ -1051,36 +1052,6 @@
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
 			<string>Pods-MTLLinkLabelExample-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F89EBD6EDD2459092AE1E15FC5504008</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E5F09FEE1139B78AC8A62CC6A65D5AB3</string>
-				<string>682D92493957EF3A8F76E4F7B69D6E49</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FAFE2FF6696C78D7D4CA4D3355146D66</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1DF845122346639A4B10296C6162CC6F</string>
-				<string>69DF8A9855E4BAB9E1239611DA6057E5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>MTLLinkLabel</string>
-			<key>path</key>
-			<string>MTLLinkLabel</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

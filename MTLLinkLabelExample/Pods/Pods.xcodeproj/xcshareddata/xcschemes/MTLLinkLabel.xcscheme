@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AB5F94EA8B8C7CCAE9DBA46E'
+               BlueprintIdentifier = '0242B049830861738A5C6420'
                BlueprintName = 'MTLLinkLabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MTLLinkLabel.framework'>

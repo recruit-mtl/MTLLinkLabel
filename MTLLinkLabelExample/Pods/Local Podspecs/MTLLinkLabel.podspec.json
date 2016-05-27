@@ -1,6 +1,6 @@
 {
   "name": "MTLLinkLabel",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": "Linkable UILabel",
   "description": "MTLLinkLabel is linkable UILabel.",
   "homepage": "http://mtl.recruit.co.jp",
@@ -17,10 +17,8 @@
   },
   "source": {
     "git": "https://github.com/mtl-git/DoodSDK-ObjC.git",
-    "tag": "0.1.3"
+    "tag": "0.1.4"
   },
-  "header_dir": "MTLLinkLabel",
-  "header_mappings_dir": "MTLLinkLabel",
-  "source_files": "MTLLinkLabel/*.{h,swift}",
+  "source_files": "MTLLinkLabel/*.swift",
   "requires_arc": true
 }

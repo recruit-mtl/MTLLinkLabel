@@ -30,12 +30,12 @@ Pod::Spec.new do |s|
                       :tag => "0.1.4"
                     }
 
-  s.header_dir = "MTLLinkLabel"
-
-  s.header_mappings_dir = "MTLLinkLabel"
+  # s.header_dir = "MTLLinkLabel"
+  #
+  # s.header_mappings_dir = "MTLLinkLabel"
 
   # s.public_header_files = "MTLLinkLabel/*.h"
-  s.source_files  = "MTLLinkLabel/*.{h,swift}"
+  s.source_files  = "MTLLinkLabel/*.swift"
 
   s.requires_arc = true
 
