@@ -1,0 +1,5 @@
+framework module "MTLLinkLabel" {
+    umbrella header "MTLLinkLabel.h"
+    export *
+    module * { export * }
+}

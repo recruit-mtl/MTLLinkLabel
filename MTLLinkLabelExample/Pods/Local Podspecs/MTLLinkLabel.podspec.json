@@ -1,0 +1,24 @@
+{
+  "name": "MTLLinkLabel",
+  "version": "0.1.4",
+  "summary": "Linkable UILabel",
+  "description": "MTLLinkLabel is linkable UILabel.",
+  "homepage": "http://mtl.recruit.co.jp",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kokoro": "korotan1@mac.com"
+  },
+  "social_media_url": "https://twitter.com/kokoron",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/mtl-git/DoodSDK-ObjC.git",
+    "tag": "0.1.4"
+  },
+  "source_files": "MTLLinkLabel/*.swift",
+  "requires_arc": true
+}
