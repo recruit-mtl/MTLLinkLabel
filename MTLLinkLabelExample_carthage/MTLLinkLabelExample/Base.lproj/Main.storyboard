@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jwn-Md-nRK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="cup-X3-as0">
+            <objects>
+                <tableViewController id="f5z-Y8-rac" customClass="TableViewController" customModule="MTLLinkLabelExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e35-IQ-gbV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="XfX-jb-29a" customClass="TableViewCell" customModule="MTLLinkLabelExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XfX-jb-29a" id="jde-87-x6D">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPP-Y6-B1z" customClass="LinkLabel" customModule="MTLLinkLabel">
+                                            <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nPP-Y6-B1z" firstAttribute="top" secondItem="jde-87-x6D" secondAttribute="topMargin" id="7gZ-1I-UDY"/>
+                                        <constraint firstItem="nPP-Y6-B1z" firstAttribute="trailing" secondItem="jde-87-x6D" secondAttribute="trailingMargin" id="YeI-AU-99x"/>
+                                        <constraint firstItem="nPP-Y6-B1z" firstAttribute="leading" secondItem="jde-87-x6D" secondAttribute="leadingMargin" id="x3w-S9-qOK"/>
+                                        <constraint firstItem="nPP-Y6-B1z" firstAttribute="bottom" secondItem="jde-87-x6D" secondAttribute="bottomMargin" id="z37-gd-Zyu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="nPP-Y6-B1z" id="TWu-be-HyN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f5z-Y8-rac" id="lfV-Wh-ULL"/>
+                            <outlet property="delegate" destination="f5z-Y8-rac" id="Kli-wG-D4c"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="MYN-jc-ex8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2a-Wn-yAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="331"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xQb-ae-aJ5">
+            <objects>
+                <navigationController id="Jwn-Md-nRK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x0H-m6-BCb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="f5z-Y8-rac" kind="relationship" relationship="rootViewController" id="HfG-ch-a55"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ID5-Wc-3AB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="331"/>
+        </scene>
+    </scenes>
+</document>

@@ -21,11 +21,15 @@ DerivedData
 
 Pods/
 Pods/*
-MTLLinkLabelExample/Pods/*
+MTLLinkLabelExample_pod/Pods/*
 
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
 
+MTLLinkLabelExample_carthage/Carthage/
+MTLLinkLabelExample_carthage/Carthage/Checkouts
+MTLLinkLabelExample_carthage/Carthage/Build
+Carthage/
+Carthage/Checkouts
 Carthage/Build
