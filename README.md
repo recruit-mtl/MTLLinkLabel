@@ -2,6 +2,8 @@
 
 [![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/MTLLinkLabel/badge.png)](https://cocoadocs.org/docsets/MTLLinkLabel) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+<img src="https://s3-ap-northeast-1.amazonaws.com/mtl-link-label/example.gif" width="186" height="333" />
+
 MTLLinkLabel is linkable UILabel
 
 ## Requirements
