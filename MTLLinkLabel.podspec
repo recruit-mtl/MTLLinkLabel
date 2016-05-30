@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MTLLinkLabel"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "Linkable UILabel"
 
   s.description  = <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source       = { :git => "https://github.com/recruit-mtl/MTLLinkLabel.git",
-                      :tag => "v0.1.5"
+                      :tag => "v0.1.6"
                     }
 
   # s.header_dir = "MTLLinkLabel"
