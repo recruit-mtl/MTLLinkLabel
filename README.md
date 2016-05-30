@@ -44,7 +44,7 @@ target 'MTLLinkLabelExample' do
 
   use_frameworks!
 
-  pod 'MTLLinkLabel', '~> 0.1.4'
+  pod 'MTLLinkLabel', '~> 0.1.5'
 
 end
 ```
