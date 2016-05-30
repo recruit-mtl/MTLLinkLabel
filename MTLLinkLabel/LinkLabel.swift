@@ -10,14 +10,57 @@ import UIKit
 
 public typealias LinkSelection = (NSURL) -> Void
 
+/**
+ 
+ LinkLabels delegate protocol
+ 
+ */
 public protocol LinkLabelDelegate: NSObjectProtocol {
     
+    /**
+     
+     It is possible to specify the Attribute for NSTextCheckingType
+     
+     - Parameter:
+        - linkLabel:    Target LinkLabel
+        - checkingType: NSTextCheckingType
+     
+     - Returns: NSAttributedStrings attribute object
+     
+    */
     func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject]
     
+    /**
+     
+     It is possible to specify the Attribute for custome links
+     
+     - Parameter:
+        - linkLabel:    Target LinkLabel
+     
+     - Returns: NSAttributedStrings attribute object
+     
+     */
     func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject]
     
+    /**
+     
+     It is possible to specify the Action for text and NSTextCheckingResult
+     
+     - Parameter:
+        - linkLabel:    Target LinkLabel
+        - text:         Target text
+        - result:       Target NSTextCheckingResult
+     
+     */
     func linkLabelExecuteLink(linkLabel: LinkLabel, text: String, result: NSTextCheckingResult) -> Void
     
+    /**
+     
+     It is possible to specify the allowed NSTextCheckingTypes
+     
+     - Returns: NSTextCheckingTypes
+     
+     */
     func linkLabelCheckingLinkType() -> NSTextCheckingTypes
     
 }
@@ -68,8 +111,10 @@ public extension LinkLabelDelegate {
 
 public class LinkLabel: UILabel {
     
+    /// link labels delegate
     public weak var delegate: LinkLabelDelegate?
     
+    /// Text for this label
     override public var text: String? {
         didSet {
             
@@ -94,6 +139,7 @@ public class LinkLabel: UILabel {
         }
     }
     
+    /// Attributed text for this label
     override public var attributedText: NSAttributedString? {
         didSet {
             self.customLinks.removeAll()
@@ -113,6 +159,19 @@ public class LinkLabel: UILabel {
     
     // MARK: - Add custome link
     
+    /**
+     
+     Add link in this label
+     
+     - Parameter:
+        - url:              URL
+        - range:            Range of link
+        - linkAttribute:    NSAttributedStrings attribute object for link
+        - selection:        Action at the time of the link selection
+     
+     - Returns: this LinkLabel
+     
+     */
     public func addLink(url: NSURL, range: NSRange, linkAttribute: [String: AnyObject]? = nil, selection: LinkSelection?) -> LinkLabel {
         self.customLinks.append(
             CustomLink(
@@ -126,6 +185,17 @@ public class LinkLabel: UILabel {
         return self
     }
     
+    /**
+     
+     Remove link in this label
+     
+     - Parameter:
+        - url:              URL
+        - range:            Range of link
+     
+     - Returns: this LinkLabel
+     
+     */
     public func removeLink(url: NSURL, range: NSRange) -> LinkLabel {
         self.customLinks = self.customLinks.filter{!($0.url.path == url.path && $0.range.location == range.location && $0.range.length == range.length)}
         self.reloadAttributedString()

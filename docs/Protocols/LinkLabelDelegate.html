@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LinkLabelDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/LinkLabelDelegate" class="dashAnchor"></a>
+    <a title="LinkLabelDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MTLLinkLabel Docs</a> (55% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MTLLinkLabel Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LinkLabelDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LinkLabel.html">LinkLabel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LinkLabelDelegate.html">LinkLabelDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LinkLabelDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LinkLabelDelegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>LinkLabels delegate protocol</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12MTLLinkLabel17LinkLabelDelegate25linkAttributeForLinkLabelFTCS_9LinkLabel12checkingTypeVSC18NSTextCheckingType_GVs10DictionarySSPs9AnyObject__"></a>
+                    <a name="//apple_ref/swift/Method/linkAttributeForLinkLabel(_:checkingType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12MTLLinkLabel17LinkLabelDelegate25linkAttributeForLinkLabelFTCS_9LinkLabel12checkingTypeVSC18NSTextCheckingType_GVs10DictionarySSPs9AnyObject__">linkAttributeForLinkLabel(_:checkingType:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>It is possible to specify the Attribute for NSTextCheckingType</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    <p>Parameter:</p>
+
+<ul>
+<li>linkLabel:    Target LinkLabel</li>
+<li>checkingType: NSTextCheckingType</li>
+</ul>
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p>NSAttributedStrings attribute object</p>
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkAttributeForLinkLabel</span><span class="p">(</span><span class="nv">linkLabel</span><span class="p">:</span> <span class="kt">LinkLabel</span><span class="p">,</span> <span class="nv">checkingType</span><span class="p">:</span> <span class="kt">NSTextCheckingType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>NSAttributedStrings attribute object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12MTLLinkLabel17LinkLabelDelegate34linkDefaultAttributeForCustomeLinkFCS_9LinkLabelGVs10DictionarySSPs9AnyObject__"></a>
+                    <a name="//apple_ref/swift/Method/linkDefaultAttributeForCustomeLink(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12MTLLinkLabel17LinkLabelDelegate34linkDefaultAttributeForCustomeLinkFCS_9LinkLabelGVs10DictionarySSPs9AnyObject__">linkDefaultAttributeForCustomeLink(_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>It is possible to specify the Attribute for custome links</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    <p>Parameter:</p>
+
+<ul>
+<li>linkLabel:    Target LinkLabel</li>
+</ul>
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p>NSAttributedStrings attribute object</p>
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkDefaultAttributeForCustomeLink</span><span class="p">(</span><span class="nv">linkLabel</span><span class="p">:</span> <span class="kt">LinkLabel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>NSAttributedStrings attribute object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12MTLLinkLabel17LinkLabelDelegate20linkLabelExecuteLinkFTCS_9LinkLabel4textSS6resultCSo20NSTextCheckingResult_T_"></a>
+                    <a name="//apple_ref/swift/Method/linkLabelExecuteLink(_:text:result:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12MTLLinkLabel17LinkLabelDelegate20linkLabelExecuteLinkFTCS_9LinkLabel4textSS6resultCSo20NSTextCheckingResult_T_">linkLabelExecuteLink(_:text:result:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>It is possible to specify the Action for text and NSTextCheckingResult</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    <ul>
+<li>linkLabel:    Target LinkLabel</li>
+<li>text:         Target text</li>
+<li>result:       Target NSTextCheckingResult</li>
+</ul>
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkLabelExecuteLink</span><span class="p">(</span><span class="nv">linkLabel</span><span class="p">:</span> <span class="kt">LinkLabel</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">NSTextCheckingResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12MTLLinkLabel17LinkLabelDelegate25linkLabelCheckingLinkTypeFT_Vs6UInt64"></a>
+                    <a name="//apple_ref/swift/Method/linkLabelCheckingLinkType()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12MTLLinkLabel17LinkLabelDelegate25linkLabelCheckingLinkTypeFT_Vs6UInt64">linkLabelCheckingLinkType()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>It is possible to specify the allowed NSTextCheckingTypes</p>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    NSTextCheckingTypes
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkLabelCheckingLinkType</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSTextCheckingTypes</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>NSTextCheckingTypes</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://twitter.com/kokoron" target="_blank" rel="external">kokoron</a>. All rights reserved. (Last updated: 2016-05-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
