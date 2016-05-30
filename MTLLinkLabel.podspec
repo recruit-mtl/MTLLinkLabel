@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
 
-  s.source       = { :git => "https://github.com/mtl-git/DoodSDK-ObjC.git",
+  s.source       = { :git => "https://github.com/recruit-mtl/MTLLinkLabel.git",
                       :tag => "v0.1.5"
                     }
 
