@@ -1,14 +1,12 @@
 PODS:
-  - MTLLinkLabel (0.1.4)
+  - MTLLinkLabel (0.1.6)
 
 DEPENDENCIES:
-  - MTLLinkLabel (from `..`)
-
-EXTERNAL SOURCES:
-  MTLLinkLabel:
-    :path: ".."
+  - MTLLinkLabel
 
 SPEC CHECKSUMS:
-  MTLLinkLabel: ee5a5de180e56a1e7ba3dfc01be3f9d374a5162b
+  MTLLinkLabel: 229057423902c4ea731db7bc1d435d37d79d6d08
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 5dfbd63a3818890f26e46aeb2fba7f4d674976d6
+
+COCOAPODS: 1.0.0
