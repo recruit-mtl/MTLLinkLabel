@@ -1,4 +1,4 @@
-# MTLLinkLabel 
+#<img src="https://s3-ap-northeast-1.amazonaws.com/mtl-link-label/mtl_link_label.png" width="850" alt="MTLLinkLabel" />
 
 [![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/MTLLinkLabel/badge.png)](https://cocoadocs.org/docsets/MTLLinkLabel) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
