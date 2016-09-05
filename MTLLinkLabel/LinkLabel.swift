@@ -315,8 +315,12 @@ public class LinkLabel: UILabel {
         self.textStorage?.removeLayoutManager(self.layoutManager)
         if let attributedString = self.attributedText {
             let ma = NSMutableAttributedString(attributedString: attributedString)
-            
-            ma.addAttribute(NSFontAttributeName, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = textAlignment
+            ma.addAttributes([
+                NSFontAttributeName: self.font,
+                NSParagraphStyleAttributeName: paragraphStyle
+            ], range: NSMakeRange(0, (ma.string as NSString).length))
             self.textStorage = NSTextStorage(attributedString: ma)
         }
         else {
