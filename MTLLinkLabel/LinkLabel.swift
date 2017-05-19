@@ -197,7 +197,13 @@ public class LinkLabel: UILabel {
      
      */
     public func removeLink(url: NSURL, range: NSRange) -> LinkLabel {
-        self.customLinks = self.customLinks.filter{!($0.url.path == url.path && $0.range.location == range.location && $0.range.length == range.length)}
+        self.customLinks = self.customLinks.filter{ link in
+            let hasSamePath: Bool = link.url.path == url.path
+            let hasSameRangeLocation: Bool = link.range.location == range.location
+            let hasSameRangeLength: Bool = link.range.length == range.length
+
+            return !(hasSamePath && hasSameRangeLocation && hasSameRangeLength)
+        }
         self.reloadAttributedString()
         return self
     }
