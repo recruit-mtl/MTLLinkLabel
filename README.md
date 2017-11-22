@@ -10,7 +10,8 @@ MTLLinkLabel is linkable UILabel. Written in Swift.
 ## Requirements
 
 - iOS 8.0+
-- Xcode 7.3+
+- Xcode 9+
+- Swift 4
 
 ## Installation
 
