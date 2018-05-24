@@ -28,7 +28,7 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
      - Returns: NSAttributedStrings attribute object
      
     */
-    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [String: AnyObject]
+    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedStringKey: Any]
     
     /**
      
@@ -40,7 +40,7 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
      - Returns: NSAttributedStrings attribute object
      
      */
-    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject]
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [NSAttributedStringKey: Any]
     
     /**
      
@@ -89,17 +89,17 @@ public extension LinkLabelDelegate {
         }
     }
     
-    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [String: AnyObject] {
+    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedStringKey: Any] {
         return [
-            NSForegroundColorAttributeName: linkLabel.tintColor,
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue as AnyObject
+            NSAttributedStringKey.foregroundColor: linkLabel.tintColor,
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue
         ]
     }
     
-    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject] {
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [NSAttributedStringKey: Any] {
         return [
-            NSForegroundColorAttributeName: linkLabel.tintColor,
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue as AnyObject
+            NSAttributedStringKey.foregroundColor: linkLabel.tintColor,
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue
         ]
     }
     
@@ -127,7 +127,7 @@ public class LinkLabel: UILabel {
             if let text = self.text {
                 if text.characters.count > 0 {
                     mAttributedString.addAttribute(
-                    NSFontAttributeName,
+                        NSAttributedStringKey.font,
                         value: self.font,
                         range: NSMakeRange(0, text.characters.count)
                     )
@@ -172,12 +172,12 @@ public class LinkLabel: UILabel {
      - Returns: this LinkLabel
      
      */
-    public func addLink(url: URL, range: NSRange, linkAttribute: [String: AnyObject]? = nil, selection: LinkSelection?) -> LinkLabel {
+    public func addLink(url: URL, range: NSRange, linkAttribute: [NSAttributedStringKey: Any]? = nil, selection: LinkSelection?) -> LinkLabel {
         self.customLinks.append(
             CustomLink(
                 url: url,
                 range: range,
-                linkAttribute: linkAttribute ?? self.delegate?.linkDefaultAttributeForCustomeLink(linkLabel: self) ?? [String: AnyObject](),
+                linkAttribute: linkAttribute ?? self.delegate?.linkDefaultAttributeForCustomeLink(linkLabel: self) ?? [NSAttributedStringKey: Any](),
                 selection: selection
             )
         )
@@ -216,7 +216,7 @@ public class LinkLabel: UILabel {
             
             if let link = linkOrNil {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: link.range)
+                mAttributedString.addAttribute(NSAttributedStringKey.backgroundColor, value: UIColor(white: 0.0, alpha: 0.1), range: link.range)
                 super.attributedText = mAttributedString
                 return
             }
@@ -226,7 +226,7 @@ public class LinkLabel: UILabel {
                 guard let result = resultOrNil else { return }
                 
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
+                mAttributedString.addAttribute(NSAttributedStringKey.backgroundColor, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
                 super.attributedText = mAttributedString
             }
         }
@@ -265,7 +265,7 @@ public class LinkLabel: UILabel {
 
         if count > 0 {
             let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-            mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
+            mAttributedString.removeAttribute(NSAttributedStringKey.backgroundColor, range: NSMakeRange(0, count))
             super.attributedText = mAttributedString
         }
     }
@@ -275,7 +275,7 @@ public class LinkLabel: UILabel {
         if let count = self.attributedText?.string.characters.count {
             if count > 0 {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
+                mAttributedString.removeAttribute(NSAttributedStringKey.backgroundColor, range: NSMakeRange(0, count))
                 super.attributedText = mAttributedString
             }
         }
@@ -283,12 +283,16 @@ public class LinkLabel: UILabel {
     
     // MARK: - Private
     
-    private class DelegateObject: NSObject, LinkLabelDelegate {}
+    private class DelegateObject: NSObject, LinkLabelDelegate {
+        func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedStringKey : Any] {
+            return [:]
+        }
+    }
     
     private struct CustomLink {
         let url: URL
         let range: NSRange
-        let linkAttribute: [String: AnyObject]
+        let linkAttribute: [NSAttributedStringKey: Any]
         let selection: LinkSelection?
     }
     
@@ -316,7 +320,7 @@ public class LinkLabel: UILabel {
         if let attributedString = self.attributedText {
             let ma = NSMutableAttributedString(attributedString: attributedString)
             
-            ma.addAttribute(NSFontAttributeName, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
+            ma.addAttribute(NSAttributedStringKey.font, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
             self.textStorage = NSTextStorage(attributedString: ma)
         }
         else {
@@ -358,7 +362,7 @@ public class LinkLabel: UILabel {
     
     private func mekeAttributeStringForCustomLink(customLinks: [LinkLabel.CustomLink], attributedStringOrNil: NSAttributedString?) -> NSAttributedString? {
         
-        return self.mekeAttributeStringA(attributedStringOrNil: attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([String: AnyObject], NSRange) in
+        return self.mekeAttributeStringA(attributedStringOrNil: attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([NSAttributedStringKey: Any], NSRange) in
             return (
                 customLink.linkAttribute,
                 customLink.range
@@ -368,18 +372,18 @@ public class LinkLabel: UILabel {
     
     private func makeAttrbutedStringForCheckingResults(checkingResults: [NSTextCheckingResult], attributedStringOrNil: NSAttributedString?) -> NSAttributedString? {
         
-        return self.mekeAttributeStringA(attributedStringOrNil: attributedStringOrNil, objects: checkingResults, f: {(result) -> ([String: AnyObject], NSRange) in
+        return self.mekeAttributeStringA(attributedStringOrNil: attributedStringOrNil, objects: checkingResults, f: {(result) -> ([NSAttributedStringKey: Any], NSRange) in
             return (
                 self.delegate?.linkAttributeForLinkLabel(
                     linkLabel: self,
                     checkingType: result.resultType
-                ) ?? [String: AnyObject](),
+                ) ?? [NSAttributedStringKey: Any](),
                 result.range
             )
         })
     }
     
-    private func mekeAttributeStringA<T>(attributedStringOrNil: NSAttributedString?, objects: [T], f: (T) -> ([String: AnyObject], NSRange)) -> NSAttributedString? {
+    private func mekeAttributeStringA<T>(attributedStringOrNil: NSAttributedString?, objects: [T], f: (T) -> ([NSAttributedStringKey: Any], NSRange)) -> NSAttributedString? {
         
         guard let attributedString = attributedStringOrNil else { return nil }
         guard let first = objects.first else { return attributedString }

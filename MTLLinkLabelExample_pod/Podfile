@@ -4,6 +4,6 @@ target 'MTLLinkLabelExample' do
 
   use_frameworks!
 
-  pod 'MTLLinkLabel'
+  pod 'MTLLinkLabel', :path => '../'
 
 end
