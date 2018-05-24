@@ -26,16 +26,16 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
 
         let text = texts[indexPath.row]
         
@@ -44,36 +44,36 @@ class TableViewController: UITableViewController {
         paragraphStyle.maximumLineHeight = cell.label.font.pointSize * 1.5
         
         cell.label.attributedText = NSAttributedString(string: text, attributes: [
-            NSForegroundColorAttributeName: UIColor.darkGrayColor(),
-            NSParagraphStyleAttributeName: paragraphStyle
+            NSAttributedStringKey.foregroundColor: UIColor.darkGray,
+            NSAttributedStringKey.paragraphStyle: paragraphStyle
         ])
         
-        let range = (text as NSString).rangeOfString("1829")
+        let range = (text as NSString).range(of: "1829")
         
-        cell.label.addLink(NSURL(string: "https://www.google.co.jp/#q=1829")!, range: range, linkAttribute: [
-            NSForegroundColorAttributeName: UIColor.redColor(),
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+        _ = cell.label.addLink(url: URL(string: "https://www.google.co.jp/#q=1829")!, range: range, linkAttribute: [
+            NSAttributedStringKey.foregroundColor: UIColor.red,
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue
         ]) { (url) -> Void in
-            let alert = UIAlertController(title: nil, message: url.absoluteString, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            alert.addAction(UIAlertAction(title: "Go", style: .Default, handler: { (action) -> Void in
-                UIApplication.sharedApplication().openURL(url)
+            let alert = UIAlertController(title: nil, message: url.absoluteString, preferredStyle: UIAlertControllerStyle.actionSheet)
+            alert.addAction(UIAlertAction(title: "Go", style: .default, handler: { (action) -> Void in
+                UIApplication.shared.openURL(url)
             }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
-        let range2 = (text as NSString).rangeOfString("Doctor")
+        let range2 = (text as NSString).range(of: "Doctor")
         
-        cell.label.addLink(NSURL(string: "https://www.google.co.jp/#q=Doctor")!, range: range2, linkAttribute: [
-            NSForegroundColorAttributeName: UIColor.redColor(),
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+        _ = cell.label.addLink(url: URL(string: "https://www.google.co.jp/#q=Doctor")!, range: range2, linkAttribute: [
+            NSAttributedStringKey.foregroundColor: UIColor.red,
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue
             ]) { (url) -> Void in
-                let alert = UIAlertController(title: nil, message: url.absoluteString, preferredStyle: UIAlertControllerStyle.ActionSheet)
-                alert.addAction(UIAlertAction(title: "Go", style: .Default, handler: { (action) -> Void in
-                    UIApplication.sharedApplication().openURL(url)
+                let alert = UIAlertController(title: nil, message: url.absoluteString, preferredStyle: UIAlertControllerStyle.actionSheet)
+                alert.addAction(UIAlertAction(title: "Go", style: .default, handler: { (action) -> Void in
+                    UIApplication.shared.openURL(url)
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
         }
 
         return cell

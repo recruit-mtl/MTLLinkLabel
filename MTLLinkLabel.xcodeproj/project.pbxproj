@@ -246,6 +246,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -267,6 +268,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.recruit.mtl.MTLLinkLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
