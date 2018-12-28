@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias LinkSelection = (NSURL) -> Void
+public typealias LinkSelection = (URL) -> Void
 
 /**
  
@@ -28,7 +28,7 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
      - Returns: NSAttributedStrings attribute object
      
     */
-    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject]
+    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedString.Key: Any]
     
     /**
      
@@ -40,7 +40,7 @@ public protocol LinkLabelDelegate: NSObjectProtocol {
      - Returns: NSAttributedStrings attribute object
      
      */
-    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject]
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [NSAttributedString.Key: Any]
     
     /**
      
@@ -69,43 +69,43 @@ public extension LinkLabelDelegate {
     
     func linkLabelExecuteLink(linkLabel: LinkLabel, text: String, result: NSTextCheckingResult) -> Void {
         
-        if result.resultType.contains(.Link) {
+        if result.resultType.contains(.link) {
             
             let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]+"
-            if NSPredicate(format: "SELF MATCHES '\(pattern)'").evaluateWithObject(text) {
-                UIApplication.sharedApplication().openURL(NSURL(string: "mailto:" + text)!)
+            if NSPredicate(format: "SELF MATCHES '\(pattern)'").evaluate(with: text) {
+                UIApplication.shared.openURL(URL(string: "mailto:" + text)!)
                 return
             }
             
             let httpText = !text.hasPrefix("http://") && !text.hasPrefix("https://") ? "http://" + text : text
             
-            guard let url = NSURL(string: httpText) else { return }
-            UIApplication.sharedApplication().openURL(url)
+            guard let url = URL(string: httpText) else { return }
+            UIApplication.shared.openURL(url)
             
         }
-        else if result.resultType.contains(.PhoneNumber) {
+        else if result.resultType.contains(.phoneNumber) {
             let telURLString = "tel:" + text
-            UIApplication.sharedApplication().openURL(NSURL(string: telURLString)!)
+            UIApplication.shared.openURL(URL(string: telURLString)!)
         }
     }
     
-    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingType) -> [String: AnyObject] {
+    func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedString.Key: Any] {
         return [
-            NSForegroundColorAttributeName: linkLabel.tintColor,
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+            .foregroundColor: linkLabel.tintColor,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
     }
     
-    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [String: AnyObject] {
+    func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [NSAttributedString.Key: Any] {
         return [
-            NSForegroundColorAttributeName: linkLabel.tintColor,
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+            .foregroundColor: linkLabel.tintColor,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
     }
     
     func linkLabelCheckingLinkType() -> NSTextCheckingTypes {
-        return NSTextCheckingType.Link.rawValue
-            | NSTextCheckingType.PhoneNumber.rawValue
+        return NSTextCheckingResult.CheckingType.link.rawValue
+            | NSTextCheckingResult.CheckingType.phoneNumber.rawValue
     }
 }
 
@@ -127,7 +127,7 @@ public class LinkLabel: UILabel {
             if let text = self.text {
                 if text.characters.count > 0 {
                     mAttributedString.addAttribute(
-                    NSFontAttributeName,
+                        .font,
                         value: self.font,
                         range: NSMakeRange(0, text.characters.count)
                     )
@@ -172,12 +172,13 @@ public class LinkLabel: UILabel {
      - Returns: this LinkLabel
      
      */
-    public func addLink(url: NSURL, range: NSRange, linkAttribute: [String: AnyObject]? = nil, selection: LinkSelection?) -> LinkLabel {
+    @discardableResult
+    public func addLink(url: URL, range: NSRange, linkAttribute: [NSAttributedString.Key: Any]? = nil, selection: LinkSelection?) -> LinkLabel {
         self.customLinks.append(
             CustomLink(
                 url: url,
                 range: range,
-                linkAttribute: linkAttribute ?? self.delegate?.linkDefaultAttributeForCustomeLink(self) ?? [String: AnyObject](),
+                linkAttribute: linkAttribute ?? self.delegate?.linkDefaultAttributeForCustomeLink(linkLabel: self) ?? [NSAttributedString.Key: Any](),
                 selection: selection
             )
         )
@@ -196,65 +197,64 @@ public class LinkLabel: UILabel {
      - Returns: this LinkLabel
      
      */
-    public func removeLink(url: NSURL, range: NSRange) -> LinkLabel {
+    public func removeLink(url: URL, range: NSRange) -> LinkLabel {
         self.customLinks = self.customLinks.filter{!($0.url.path == url.path && $0.range.location == range.location && $0.range.length == range.length)}
         self.reloadAttributedString()
         return self
     }
     
     // MARK: - touch
-    
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard let location = touches.first?.locationInView(self) else { return }
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
         
         self.textView?.textContainer.size = self.textView!.frame.size
         
-        let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
+        let index = layoutManager.glyphIndex(for: location, in: textContainer)
         
-        self.searchCustomeLink(index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
+        self.searchCustomeLink(index: index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
             
             if let link = linkOrNil {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: link.range)
+                mAttributedString.addAttribute(.backgroundColor, value: UIColor(white: 0.0, alpha: 0.1), range: link.range)
                 super.attributedText = mAttributedString
                 return
             }
             
-            self.searchResult(index, inResults: self.lastCheckingResults) { (resultOrNil) -> Void in
+            self.searchResult(index: index, inResults: self.lastCheckingResults) { (resultOrNil) -> Void in
                 
                 guard let result = resultOrNil else { return }
                 
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
+                mAttributedString.addAttribute(.backgroundColor, value: UIColor(white: 0.0, alpha: 0.1), range: result.range)
                 super.attributedText = mAttributedString
             }
         }
     }
     
-    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard let location = touches.first?.locationInView(self) else { return }
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: self) else { return }
         guard let textContainer = self.textView?.textContainer else { return }
         
         self.textView?.textContainer.size = self.textView!.frame.size
         
-        let index = layoutManager.glyphIndexForPoint(location, inTextContainer: textContainer)
+        let index = layoutManager.glyphIndex(for: location, in: textContainer)
 
-        self.searchCustomeLink(index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
+        self.searchCustomeLink(index: index, inCustomeLinks: self.customLinks) { (linkOrNil) -> Void in
             if let link = linkOrNil {
                 link.selection?(link.url)
                 return
             }
             
-            self.searchResult(index, inResults: self.lastCheckingResults) { (resultOrNil) -> Void in
+            self.searchResult(index: index, inResults: self.lastCheckingResults) { (resultOrNil) -> Void in
                 
                 guard let result = resultOrNil else {
                     return
                 }
                 
                 self.delegate?.linkLabelExecuteLink(
-                    self,
-                    text: (self.attributedText!.string as NSString).substringWithRange(result.range),
+                    linkLabel: self,
+                    text: (self.attributedText!.string as NSString).substring(with: result.range),
                     result: result
                 )
             }
@@ -265,17 +265,17 @@ public class LinkLabel: UILabel {
 
         if count > 0 {
             let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-            mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
+            mAttributedString.removeAttribute(.backgroundColor, range: NSMakeRange(0, count))
             super.attributedText = mAttributedString
         }
     }
     
-    override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let count = self.attributedText?.string.characters.count {
             if count > 0 {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
-                mAttributedString.removeAttribute(NSBackgroundColorAttributeName, range: NSMakeRange(0, count))
+                mAttributedString.removeAttribute(.backgroundColor, range: NSMakeRange(0, count))
                 super.attributedText = mAttributedString
             }
         }
@@ -286,9 +286,9 @@ public class LinkLabel: UILabel {
     private class DelegateObject: NSObject, LinkLabelDelegate {}
     
     private struct CustomLink {
-        let url: NSURL
+        let url: URL
         let range: NSRange
-        let linkAttribute: [String: AnyObject]
+        let linkAttribute: [NSAttributedString.Key: Any]
         let selection: LinkSelection?
     }
     
@@ -300,12 +300,12 @@ public class LinkLabel: UILabel {
     private let dummyDelegate = DelegateObject()
     
     private func reloadAttributedString() {
-        self.lastCheckingResults = self.searchLink(attributedText?.string ?? "")
+        self.lastCheckingResults = self.searchLink(string: attributedText?.string ?? "")
         
         let a = self.makeAttrbutedStringForCheckingResults(
-            self.lastCheckingResults,
+            checkingResults: self.lastCheckingResults,
             attributedStringOrNil: self.mekeAttributeStringForCustomLink(
-                self.customLinks,
+                customLinks: self.customLinks,
                 attributedStringOrNil: self.attributedText
             )
         )
@@ -316,7 +316,7 @@ public class LinkLabel: UILabel {
         if let attributedString = self.attributedText {
             let ma = NSMutableAttributedString(attributedString: attributedString)
             
-            ma.addAttribute(NSFontAttributeName, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
+            ma.addAttribute(.font, value: self.font, range: NSMakeRange(0, (ma.string as NSString).length))
             self.textStorage = NSTextStorage(attributedString: ma)
         }
         else {
@@ -333,7 +333,7 @@ public class LinkLabel: UILabel {
         guard let linkType = self.delegate?.linkLabelCheckingLinkType() else { return [] }
         guard let dataDetector = try? NSDataDetector(types: linkType) else { return [] }
         
-        return dataDetector.matchesInString(string, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, (string as NSString).length))
+        return dataDetector.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, (string as NSString).length))
     }
     
     private func searchResult(index: Int, inResults: [NSTextCheckingResult], completion: (NSTextCheckingResult?) -> Void) {
@@ -358,7 +358,7 @@ public class LinkLabel: UILabel {
     
     private func mekeAttributeStringForCustomLink(customLinks: [LinkLabel.CustomLink], attributedStringOrNil: NSAttributedString?) -> NSAttributedString? {
         
-        return self.mekeAttributeStringA(attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([String: AnyObject], NSRange) in
+        return self.mekeAttributeStringA(attributedStringOrNil, objects: customLinks, f: {(customLink) -> ([NSAttributedString.Key: Any], NSRange) in
             return (
                 customLink.linkAttribute,
                 customLink.range
@@ -368,18 +368,18 @@ public class LinkLabel: UILabel {
     
     private func makeAttrbutedStringForCheckingResults(checkingResults: [NSTextCheckingResult], attributedStringOrNil: NSAttributedString?) -> NSAttributedString? {
         
-        return self.mekeAttributeStringA(attributedStringOrNil, objects: checkingResults, f: {(result) -> ([String: AnyObject], NSRange) in
+        return self.mekeAttributeStringA(attributedStringOrNil, objects: checkingResults, f: {(result) -> ([NSAttributedString.Key: Any], NSRange) in
             return (
                 self.delegate?.linkAttributeForLinkLabel(
-                    self,
+                    linkLabel: self,
                     checkingType: result.resultType
-                ) ?? [String: AnyObject](),
+                ) ?? [NSAttributedString.Key: Any](),
                 result.range
             )
         })
     }
     
-    private func mekeAttributeStringA<T>(attributedStringOrNil: NSAttributedString?, objects: [T], f: T -> ([String: AnyObject], NSRange)) -> NSAttributedString? {
+    private func mekeAttributeStringA<T>(_ attributedStringOrNil: NSAttributedString?, objects: [T], f: (T) -> ([NSAttributedString.Key: Any], NSRange)) -> NSAttributedString? {
         
         guard let attributedString = attributedStringOrNil else { return nil }
         guard let first = objects.first else { return attributedString }
@@ -401,16 +401,16 @@ public class LinkLabel: UILabel {
     
     private func makeTextView() -> UITextView {
         let textView = self.textView ?? UITextView(frame: self.bounds, textContainer: NSTextContainer(size: self.frame.size))
-        textView.editable = true
-        textView.selectable = true
-        textView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        textView.isEditable = true
+        textView.isSelectable = true
+        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         textView.font = self.font
         textView.textContainer.lineBreakMode = self.lineBreakMode
         textView.textContainer.lineFragmentPadding = 0.0
-        textView.textContainerInset = UIEdgeInsetsZero
-        textView.userInteractionEnabled = false
-        textView.hidden = true
+        textView.textContainerInset = .zero
+        textView.isUserInteractionEnabled = false
+        textView.isHidden = true
         self.addSubview(textView)
         return textView
     }
