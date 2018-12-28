@@ -62,11 +62,11 @@ $ pod install
 
 You can use MTLLinkLabel in Storyboard or XIB. 
 
-#####Drag and drop UILabel in your view.
+##### Drag and drop UILabel in your view.
 
 <img src="https://s3-ap-northeast-1.amazonaws.com/mtl-link-label/ib1.png" width="258">
 
-#####Change UILabels custom class to 'LinkLabel', and Change module to 'MTLLinkLabel'.
+##### Change UILabels custom class to 'LinkLabel', and Change module to 'MTLLinkLabel'.
 
 <img src="https://s3-ap-northeast-1.amazonaws.com/mtl-link-label/ib2.png" width="259">
 
@@ -78,7 +78,7 @@ You must change labels userInteractionEnabled property to true. Because, this la
 label.userInteractionEnabled = true
 ```
 
-#####Assign String to LinkLabels 'text' property.
+##### Assign String to LinkLabels 'text' property.
 
 ```swift
 label.text = "Hello. https://github.com/recruit-mtl/MTLLinkLabel"
