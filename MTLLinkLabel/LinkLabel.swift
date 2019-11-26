@@ -73,32 +73,32 @@ public extension LinkLabelDelegate {
             
             let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]+"
             if NSPredicate(format: "SELF MATCHES '\(pattern)'").evaluate(with: text) {
-                UIApplication.shared.openURL(URL(string: "mailto:" + text)!)
+                UIApplication.shared.open(URL(string: "mailto:" + text)!)
                 return
             }
             
             let httpText = !text.hasPrefix("http://") && !text.hasPrefix("https://") ? "http://" + text : text
             
             guard let url = URL(string: httpText) else { return }
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url)
             
         }
         else if result.resultType.contains(.phoneNumber) {
             let telURLString = "tel:" + text
-            UIApplication.shared.openURL(URL(string: telURLString)!)
+            UIApplication.shared.open(URL(string: telURLString)!)
         }
     }
     
     func linkAttributeForLinkLabel(linkLabel: LinkLabel, checkingType: NSTextCheckingResult.CheckingType) -> [NSAttributedString.Key: Any] {
         return [
-            .foregroundColor: linkLabel.tintColor,
+            .foregroundColor: linkLabel.tintColor ?? .black,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
     }
     
     func linkDefaultAttributeForCustomeLink(linkLabel: LinkLabel) -> [NSAttributedString.Key: Any] {
         return [
-            .foregroundColor: linkLabel.tintColor,
+            .foregroundColor: linkLabel.tintColor ?? .black,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
     }
@@ -125,11 +125,11 @@ public class LinkLabel: UILabel {
             }
             let mAttributedString = NSMutableAttributedString(string: str)
             if let text = self.text {
-                if text.characters.count > 0 {
+                if text.count > 0 {
                     mAttributedString.addAttribute(
                         .font,
                         value: self.font,
-                        range: NSMakeRange(0, text.characters.count)
+                        range: NSMakeRange(0, text.count)
                     )
                 }
             }
@@ -272,7 +272,7 @@ public class LinkLabel: UILabel {
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if let count = self.attributedText?.string.characters.count {
+        if let count = self.attributedText?.string.count {
             if count > 0 {
                 let mAttributedString = NSMutableAttributedString(attributedString: self.attributedText!)
                 mAttributedString.removeAttribute(.backgroundColor, range: NSMakeRange(0, count))
