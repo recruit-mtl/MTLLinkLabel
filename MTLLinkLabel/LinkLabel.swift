@@ -73,19 +73,20 @@ public extension LinkLabelDelegate {
             
             let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]+"
             if NSPredicate(format: "SELF MATCHES '\(pattern)'").evaluate(with: text) {
-                UIApplication.shared.open(URL(string: "mailto:" + text)!, completionHandler: nil)
+                
+                UIApplication.shared.open(URL(string: "mailto:" + text)!, options: [:], completionHandler: nil)
                 return
             }
             
             let httpText = !text.hasPrefix("http://") && !text.hasPrefix("https://") ? "http://" + text : text
             
             guard let url = URL(string: httpText) else { return }
-            UIApplication.shared.open(url, completionHandler: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
             
         }
         else if result.resultType.contains(.phoneNumber) {
             let telURLString = "tel:" + text
-            UIApplication.shared.open(URL(string: telURLString)!, completionHandler: nil)
+            UIApplication.shared.open(URL(string: telURLString)!, options: [:], completionHandler: nil)
         }
     }
     
